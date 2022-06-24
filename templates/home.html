@@ -1,0 +1,75 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="./static/css/home.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <title>Document</title>
+    <style>
+        body{
+          background-image: url('image.jpg');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+        }
+    </style>
+</head>
+
+
+<body  background='image.jpg'>
+    <p id="p1"></p>
+    <script>
+        var today = new Date();
+        var datetime = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()+'T'+today.getHours() + ":" + today.getMinutes();
+        document.getElementById("dat").setAttribute("min", datetime);
+    </script>
+    <div class="container">
+       
+        
+        <h1>Crime Prevention</h1>
+        <h2>Predict the probabilty of Crime Occurance</h2>
+        <div>
+          <form action="/predict" class="flex-container" method="POST">
+            <!--<div class="inner">
+                <p>Month</p>
+                <input id="month" name="month" placeholder="Enter Month"  type="text">
+            </div>
+            
+            <div class="inner">
+                <p>Day</p>
+                <input id="day" name="day" placeholder="Enter Day" type="text" class="validate">
+            </div>
+            
+            <div class="inner">
+                <p>Time</p>
+                <input placeholder="Enter Time" name="time" id="time" type="text">
+            </div>min="2022-06-24T00:00"
+            -->
+            <div class="inner">
+                <p>Date</p>
+                <input id="date" name="dat" placeholder="Enter Month"  type="datetime-local" min="2022-06-24T00:00" >
+            </div>
+
+            <div class="inner">
+                <p>District</p>
+                <input id="dist" name="district" placeholder="Enter District" type="text">
+            </div>
+            
+            <div class="inner">
+                <p>Your Phone_No</p>
+                <input id="ph" name="phno" placeholder="Enter Phone_No" type="text">
+            </div>
+            
+            <button type="submit">Predict Probability</button>
+          </form>
+         </div>
+          <h4> {{pred}} </h4>
+         </div>
+        </div>
+    </div>
+</body>
+
+
+</html>
